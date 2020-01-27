@@ -51,6 +51,15 @@ struct Vector3(T)
         this._z = z;
     }
 
+    ///
+    unittest
+    {
+        const Vector3!int a = Vector3!int(8, -3, 12);
+        assert(a.x == 8);
+        assert(a.y == -3);
+        assert(a.z == 12);
+    }
+
     /** `x` provides property access to the *x* position. */
     @property public T x() { return this._x; }
 
