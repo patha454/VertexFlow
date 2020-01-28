@@ -61,11 +61,11 @@ struct Vector3(T)
     }
 
     /** `x` provides property access to the *x* position. */
-    @property public T x() { return this._x; }
+    @property public T x() const { return this._x; }
 
     /** `y` provides property access to the *y* position. */
-    @property public T y() { return this._y; }
+    @property public T y() const { return this._y; }
 
     /** `z` provides property access to the *z* position. */
-    @property public T z() { return this._z; }
+    @property public T z() const { return this._z; }
 }
