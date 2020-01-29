@@ -21,13 +21,13 @@ module vector3;
 struct Vector3(T)
 {
     /** The *x* position of the vector. */
-    private const T _x;
+    public immutable T x;
 
     /** The *y* position of the vector. */
-    private const T _y;
+    public immutable T y;
 
     /** The *z* position of the vector. */
-    private const T _z;
+    private const T z;
 
     /**
      * Constructs a new vector from three co-ordinates.
@@ -46,9 +46,9 @@ struct Vector3(T)
      */
     this(T x, T y, T z)
     {
-        this._x = x;
-        this._y = y;
-        this._z = z;
+        this.x = x;
+        this.y = y;
+        this.z = z;
     }
 
     ///
@@ -121,6 +121,9 @@ struct Vector3(T)
      * constant to ensure consistency if multiple objects refer to the same
      * `Vector3`.
      *
+     * Multiplication is not implemented to avoid ambiguity between the dot
+     * product and the cross product.
+     *
      * Params:
      *  op  =   The operator.
      *  rhs =   The other operand.
@@ -147,12 +150,12 @@ struct Vector3(T)
         assert(c == Vector3!int(1, -1, -1));
     }
 
-    /** `x` provides property access to the *x* position. */
+    /** `x` provides property access to the *x* position. 
     @property public T x() const { return this._x; }
 
-    /** `y` provides property access to the *y* position. */
+    /** `y` provides property access to the *y* position. 
     @property public T y() const { return this._y; }
 
-    /** `z` provides property access to the *z* position. */
-    @property public T z() const { return this._z; }
+    /** `z` provides property access to the *z* position. 
+    @property public T z() const { return this._z; } */
 }
