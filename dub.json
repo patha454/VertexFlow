@@ -4,6 +4,6 @@
 	],
 	"copyright": "Copyright © 2020, H Paterson",
 	"description": "A map rendering engine.",
-	"license": "Boost Software License 1.0.",
+	"license": "BSL-1.0",
 	"name": "vertexflow"
 }
