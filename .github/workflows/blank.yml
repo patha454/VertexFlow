@@ -12,6 +12,7 @@ jobs:
     - name: Setup D environment
       run: |
         mkdir ~/dlang
-        curl https://dlang.org/install.sh -o ~/dlang/install.sh
+        curl https://dlang.org/install.sh -fsS -o ~/dlang/install.sh
+        sudo chmod +x ~/dlang/install.sh
         ~/dlang/install.sh install ldc
         ~/dlang/install.sh install dub
