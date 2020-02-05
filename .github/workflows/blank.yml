@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   
-  Lint D code:
+  Lint D:
 
     runs-on: ubuntu-latest
 
