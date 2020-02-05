@@ -11,6 +11,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Setup D environment
       run: curl https://dlang.org/install.sh | bash -s install ldc
+    - name: Activate D environmant
+      run: source ~/dlang/$(~/dlang/install.sh list)/activate
     - name: Touch LDC
       run: ldc2 --help
     - name: Touch Dub
