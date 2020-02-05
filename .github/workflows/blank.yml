@@ -3,7 +3,8 @@ name: CI
 on: [push]
 
 jobs:
-  lint:
+  
+  Lint:
 
     runs-on: ubuntu-latest
 
@@ -18,5 +19,9 @@ jobs:
         echo "::set-env name=DC::$DC"
         echo "::set-env name=LIBRARY_PATH::$LIBRARY_PATH"
         echo "::set-env name=LD_LIBRARY_PATH::$LD_LIBRARY_PATH"
-    - name: Touch LDC
-      run: ldc2 --version
+    - name: Check syntax
+      run: dub lint --check-syntax
+      if: always()
+    - name: Check style
+      run: dub lint --check-style
+      if: always()
