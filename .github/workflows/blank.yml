@@ -14,6 +14,6 @@ jobs:
     - name: Activate D environmant
       run: source ~/dlang/$(~/dlang/install.sh list)/activate
     - name: echo $PATH
-      run: echo $PATH
+      run: source ~/dlang/$(~/dlang/install.sh list)/activate && echo $PATH
     - name: Touch Dub
       run: dub --help
