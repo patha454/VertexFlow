@@ -12,7 +12,13 @@ jobs:
     - name: Setup D environment
       run: curl https://dlang.org/install.sh | bash -s install ldc
     - name: Activate D environmant
-      run: source ~/dlang/$(~/dlang/install.sh list)/activate
+      run: |
+        source ~/dlang/$(~/dlang/install.sh list)/activate
+        echo "::set-env name=PATH::$PATH"
+        echo "::set-env name=DMD::$DMD"
+        echo "::set-env name=DC::$DC"
+        echo "::set-env name=LIBRARY_PATH::$LIBRARY_PATH"
+        echo "::set-env name=LD_LIBRARY_PATH::$LD_LIBRARY_PATH"
     - name: echo $PATH
       run: source ~/dlang/$(~/dlang/install.sh list)/activate && echo $PATH
     - name: Touch Dub
