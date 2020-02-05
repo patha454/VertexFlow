@@ -11,6 +11,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Setup D environment
       run: |
-        curl https://dlang.org/install.sh -O ~/dlang/install.sh
+        mkdir ~/dlang
+        curl https://dlang.org/install.sh -o ~/dlang/install.sh
         ~/dlang/install.sh install ldc
         ~/dlang/install.sh install dub
