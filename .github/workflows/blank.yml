@@ -20,8 +20,8 @@ jobs:
         echo "::set-env name=LIBRARY_PATH::$LIBRARY_PATH"
         echo "::set-env name=LD_LIBRARY_PATH::$LD_LIBRARY_PATH"
     - name: Check syntax
-      run: dub lint --check-syntax
+      run: dub lint --syntax-check
       if: always()
     - name: Check style
-      run: dub lint --check-style
+      run: dub lint --style-check
       if: always()
