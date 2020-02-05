@@ -19,4 +19,4 @@ jobs:
         echo "::set-env name=LIBRARY_PATH::$LIBRARY_PATH"
         echo "::set-env name=LD_LIBRARY_PATH::$LD_LIBRARY_PATH"
     - name: Touch LDC
-      run: ldc --version
+      run: ldc2 --version
