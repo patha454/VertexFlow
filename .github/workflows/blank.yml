@@ -4,8 +4,9 @@ on: [push]
 
 jobs:
   
-  Lint D:
-
+  lint:
+    
+    name: Lint D
     runs-on: ubuntu-latest
 
     steps:
